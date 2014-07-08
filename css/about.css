@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+  margin:0;
+  padding:0;
+}
+
+header {
+	width:80%;
+	background-color:#9ECDF3;
+	text-align: center;
+	margin:auto;
+}
+h1 {
+	margin-bottom:2%;
+	
+}
+
+div#main {
+	width:80%;
+	margin:auto;
+	background-color:#9ECDF3;
+	
+}
+div#image {
+	
+width:50%;
+margin:auto;
+margin-top:2%;
+}
+.about-pic {
+	width:100%;
+	border-style:solid;
+	border-width:2px;
+	border-color:black;
+	
+}
+p {
+	width:40%;
+	text-align:center;
+	margin:auto;
+	font-size:1.5em;
+	font-weight:400;
+	
+}
