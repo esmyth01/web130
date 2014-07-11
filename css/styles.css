@@ -7,13 +7,59 @@ header {
   padding: 1%;
   margin: 1%;
 }
-nav { width: 100%; background-color:#EAD952; margin-bottom:2%; }
-nav ul { list-style: none; padding: 0px; margin: 0px; font-weight: bold; text-align: center; }
-nav ul li { display: inline-block; }
-nav ul li a { display: block; padding: 10px 40px; text-decoration: none; color:#A57C52; }
-nav ul li a:hover { background-color:#8ABDEF; color:white; 
-}
 
+#main-menu { width: 100%; background-color:#EAD952; margin-bottom:2%; }
+#main-menu ul { list-style: none; padding: 0px; margin: 0px; font-weight: bold; text-align: center; }
+#main-menu ul li { display: inline-block; }
+#main-menu ul li a { display: block; padding: 10px 40px; text-decoration: none; color:#A57C52; }
+#main-menu ul li a:hover { background-color:#8ABDEF; color:white; 
+}
+/*
+#main-menu ul {
+  
+  list-style:none;
+  padding-left: 10px;
+  postion:relative;
+}
+#main-menu li {
+  
+  float: left;
+}
+#main-menu li a {
+  background: #778899;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+#main-menu li a:hover {
+  background: skyblue;
+  color:black;
+}
+*/
+/*sub-menu styles*/
+#main-menu ul li ul {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  
+}
+#main-menu ul li:hover ul {
+ 
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+  
+}
+#main-menu ul li ul li {
+   display:block;
+  float: none;
+  background: #778899;
+}
+#main-menu ul li ul li:hover {
+  
+  background: magenta;
+}
 
 article{
   padding: 1%;
