@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>html5 template</title>
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script> 
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style type="text/css">
+      .error {
+        color: red;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function() {
+        document.getElementById("contact-form").onsubmit = validateForm;
+      }
+
+      function validateForm() {
+        var validFirstName = validateTextField("first-name", "error-first-name");
+        var validLastName = validateTextField("last-name", "error-last-name");
+        var validPhone = validateTextField("phone", "error-phone");
+        var validAddress = validateTextField("address", "error-address");
+        var validTerms = validateCheckBox("terms", "error-terms");
+        var validZipcode = validZip("zipcode", "error-zipcode");
+        var validEmail = validateTextField("email", "error-email");
+        var validLanguage = validateCheckBox("language", "error-language")
+        var validCar = ValidateRadioButton("car", "error-car")
+
+        return validFirstName && validLastName && validPhone && validAddress && validZipcode && validEmail && validLanguage && validCar && validTerms;
+
+      }
+      function validZip() {
+        var zip = document.getElementById('zipcode').value;
+        var zipRegExp = /(^\d{5}$)|/;
+        return zipRegExp.test(zip);
+      }
+
+
+      function validateTextField(fieldId, errorId){
+        //take a parameter and test any text field
+        var fieldText = document.getElementById(fieldId).value;
+        var errorSpan = document.getElementById(errorId);
+
+
+        if(fieldText === "") {
+          //show error and stay
+          errorSpan.className = "error";
+          return false;
+        } else {
+          //hide error and succeed
+          errorSpan.className = "hidden";
+          return true;
+        }
+      }
+
+
+
+
+      function validateCheckBox(fieldId, errorId){
+        //take a parameter and test any text field
+        var checkBox = document.getElementById(fieldId);
+        var errorSpan = document.getElementById(errorId);
+
+        if(!checkBox.checked) {
+          //show error and stay
+          errorSpan.className = "error";
+          return false;
+        } else {
+          //hide error and succeed
+          errorSpan.className = "hidden";
+          return true;
+        }
+      }
+
+
+    </script>
+  </head>
+  <body>
+    <form id="contact-form" action="success.html">
+      <p>
+        <label for="first-name">First Name:
+          <input type="text" name="first-name" id="first-name">
+          <span id="error-first-name" class="hidden">* Blank</span>
+        </label>
+      </p>
+      <p>
+        <label for="last-name">Last Name:
+          <input type="text" name="last-name" id="last-name">
+          <span id="error-last-name" class="hidden">* Blank</span>
+        </label>
+      </p>
+      <p>
+        <label for="address">Address:
+          <input type="text" name="address" id="address">
+          <span id="error-address" class="hidden">* Blank</span>
+        </label>
+      </p>
+
+      <select>
+        <option value="Seattle">Seattle</option>
+        <option value="Portland">Portland</option>
+        <option value="Vancouver">Vancouver</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Other">Other</option>
+      </select>
+      <p>
+        <label for="zipcode">Zipcode:
+          <input type="text" name="zipcode" id="zipcode">
+          <span id="error-zipcode" class="hidden">* must be 5 digits</span>
+        </label>
+      </p>
+      <p>
+        <label for="zipcode">Email:
+          <input type="text" name="email" id="email">
+          <span id="error-email" class="hidden">* invalid email</span>
+        </label>
+      </p>
+
+      <p>
+        <label for="phone">Phone:
+          <input type="text" name="phone" id="phone">
+          <span id="error-phone" class="hidden">* Blank</span>     
+        </label>
+      </p>
+      <p>
+        <label for="language">
+          <input type="checkbox" id="language" name="language1">English
+           <input type="checkbox" id="language" name="language2">Spanish
+          <input type="checkbox" id="language" name="language3">French
+          <input type="checkbox" id="language" name="language4">German
+        
+        
+        </label>
+      </p>
+       <p>
+        <label for="car">
+       Do you own a car?   <input type="radio" id="car" name="car">yes
+         <input type="radio" id="car" name="car">no
+        <span id="error-car" class="hidden">* please select yes or no</span>
+         </label>
+      </p>
+      
+      
+      <p>
+        <label for="terms">
+          <input type="checkbox" id="terms" name="terms">I Agree
+          <span id="error-terms" class="hidden">* You must agree</span>
+        </label>
+      </p>
+      <button name="submit" id="submit">Submit</button>
+
+    </form>
+
+  </body>
+</html>

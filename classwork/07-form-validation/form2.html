@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>html5 template</title>
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <!-- <script src="js/jquery-2.1.1.min.js"></script> -->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="js/jquery-2.1.1.min.js"></script>
+
+    <style>
+      .error {
+        color:red;
+        font-size:1.3em;
+      }
+      .hidden {
+        display:none;
+      }
+
+    </style>
+    <script>
+      window.onload = function(){
+        document.getElementById("contact-form").onsubmit = validateContact;
+      }
+      function validateContact(){
+        var firstName = document.getElementById("first-name").value;
+        var fNameError = document.getElementById("error-first-name");
+       var lastName = document.getElementById("last-name").value;
+        var lNameError = document.getElementById("error-last-name");
+        first-name");
+       var phone = document.getElementById("phone").value;
+        var phoneError = document.getElementById("error-phone");
+        
+        
+        if(firstName == "") {
+          fNameError.className = "error";
+          return false;
+        }
+        else {
+          fNameError.className = "hidden";
+          return true;
+        }
+ if(lastName == "") {
+          lNameError.className = "error";
+          return false;
+        }
+        else {
+          lNameError.className = "hidden";
+          return true;
+        }
+      if(phone == "") {
+          phoneError.className = "error";
+          return false;
+        }
+        else {
+          phoneError.className = "hidden";
+          return true;
+        }
+      
+      }
+
+    </script>
+  </head>
+  <body>
+    <form id="contact-form" action="success.html">
+      <p>
+        <label for="first-name">First Name:</label>
+        <input name="first-name" id="first-name" type="text">
+        <span id="error-first-name" class="error hidden">* Error</span><br>
+      <label for="last-name">Last Name:</label>
+        <input name="last-name" id="last-name" type="text">
+        <span id="error-last-name" class="error hidden">* Error</span><br> 
+     <label for="phone">Phone:</label>
+        <input name="phone" id="phone" type="text">
+        <span id="error-phone" class="error phone">* Error</span><br> 
+     <input type="radio" name="iAgree" value="iAgree">I Agree<br> 
+      </p>
+      <button name="submit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,49 +1,36 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Contact</title>
-     <script src="js/jquery-2.1.1.min.js"></script> 
+    <meta charset="utf-8">
+    <title>Form Validation</title>
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <script src="js/jquery-2.1.1.min.js"></script> 
     <script src="js/parsley.min.js"></script>
-    <link rel="stylesheet" href="css/contact.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     
     
-    <script>
-      function myFunction() {
-        var person = prompt("Please enter your name");
-        if (person != null) {
-          document.getElementById("contact").innerHTML =
-            "Greetings " + person + "! How are you today?";
-        }
-      }
-    </script>
-
-
   </head>
-
   <body>
-    <button onclick="myFunction()">Click here</button>
-    <p id="contact"></p>
-
-
     <form id="form" action="success.html" data-parsely-validate>
       <p>
         <label for="first-name">First Name:
           <input type="text" name="first-name" required />
-
+          
         </label>
       </p>
       <p>
         <label for="last-name">Last Name:
           <input type="text" name="last-name" required />
-
+          
         </label>
       </p>
       <p>
         <label for="address">Address:
           <input type="text" name="address" required />
-
+          
         </label>
       </p>
 
@@ -57,55 +44,55 @@
       <p>
         <label for="zipcode">Zipcode:
           <input type="text" name="zipcode" required data-parsley-type="digits" data-parsley-length="[5, 5]"/>
-
+          
         </label>
       </p>
       <p>
         <label for="email">Email:
           <input type="email" name="email" id="email" data-parsley-type="email" data-parsley-equalto="#email" />
-
+          
         </label>
       </p>
-      <p>
+<p>
         <label for="email">Email:
           <input type="email" name="email" id="email" data-parsley-type="email" data-parsley-equalto="#email" />
-
+         
         </label>
       </p>
       <p>
         <label for="phone">Phone:
           <input type="text" name="phone" required data-parsley-type="digits" data-parsley-length="[10, 10]" />
-
+          
         </label>
       </p>
       <label for="hobbies">Activities (2 minimum):</label>
-      <p>
-        Skiing <input type="checkbox" name="activities" value="ski" required data-parsley-mincheck="2" />
-        Running <input type="checkbox" name="activities" value="run" />
-        Eating <input type="checkbox" name="activities" value="eat" />
-        Fishing <input type="checkbox" name="activities" value="fishing" />
-        Camping <input type="checkbox" name="activities" value="camping" />
-        Coding <input type="checkbox" name="activities" value="code" />
-      </p>
-      <label for="car">Do you own a car?</label>
-      <p>
-        Yes <input type="radio" name="car" id="yes" value="yes" required />
-        No <input type="radio" name="car" id="no" value="no" />
-      </p>
+  <p>
+    Skiing <input type="checkbox" name="activities" value="ski" required data-parsley-mincheck="2" />
+    Running <input type="checkbox" name="activities" value="run" />
+    Eating <input type="checkbox" name="activities" value="eat" />
+    Fishing <input type="checkbox" name="activities" value="fishing" />
+    Camping <input type="checkbox" name="activities" value="camping" />
+    Coding <input type="checkbox" name="activities" value="code" />
+  </p>
+       <label for="car">Do you own a car?</label>
+  <p>
+    Yes <input type="radio" name="car" id="yes" value="yes" required />
+    No <input type="radio" name="car" id="no" value="no" />
+  </p>
 
-
+      
       <p>
         <label for="terms">
           <input type="checkbox" id="terms" required data-parsley-mincheck="1"/>I Agree
-
+          
         </label>
       </p>
       <button name="submit" id="submit">Submit</button>
 
     </form>
-    <script type="text/javascript">
-      $('#form').parsley();
-    </script>
-
+<script type="text/javascript">
+  $('#form').parsley();
+</script>
+  
   </body>
 </html>
