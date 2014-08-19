@@ -1,23 +1,46 @@
 <html>
 
-	<head>
+  <head>
 
 
 
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-		<script>
+    <script>
+      $(document).ready(function(){
+        // $("#clickHere").click(showMessage);
+        $("#myInput").keyup(showMessage);
 
-			
 
-		</script>
+      });
+      function showMessage(){
+        // var myInput = $("#myInput").val();
 
-	</head>
+        //return alert(myInput);
 
-	<body>
+        // $("#target").html(myInput);
+        $("#target").load("poster.php", {data: $(this).val()
 
-		
+                                        });
 
+
+      }
+
+
+
+    </script>
+
+  </head>
+
+  <body>
+
+
+    <input id="myInput" type="text" />
+    <div id="target"></div>
+
+
+    <button id="clickHere">Click here</button>
+  </body>
 </html>
 
 

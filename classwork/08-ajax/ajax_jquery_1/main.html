@@ -1,21 +1,40 @@
 <html>
 
-	<head>
+  <head>
 
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-		<script>
+    <script>
 
-			
+      $(document).ready(function(){
+        $("#doStuff").click(showMessage)
+         $("#doStuff2").click(showMessage2)
 
-		</script>
+      });
+      function showMessage(){
+        $("#target").load("message.txt", function(){alert("i am done")}
+                         );
+      }
+function showMessage2(){
+       // $("#target2").load("message.html #div1");
+     $("#target2").load();
 
-    </head>
+}
 
-	<body>
+    </script>
 
-		
+  </head>
 
-	</body>
+  <body>
+    <div id="target">
+    </div>
+
+    <button id="doStuff">Do Stuff</button> 
+    <div id="target2">
+    </div>
+
+    <button id="doStuff2">Do Stuff2</button> 
+
+  </body>
 
 </html>
